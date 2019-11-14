@@ -28,7 +28,7 @@
       </style>
 </head>
 
-    <body class="bg-darkness">
+    <body class="bg-darkness" onload="">
       <header>
     <div class="collapse bg-darkness" id="navbarHeader">
       <div class="container">
@@ -40,10 +40,8 @@
           <div class="col-sm-4 offset-md-1 py-4">
             <ul class="list-unstyled">
               <li><h4 class="text-white"><a href="Gallery.html" class="text-white">Images</a></li></h4>
-              <li><h4 class="text-white"><a href="login.html" class="text-white">Login</a></li></h4>
-              <li><h4 class="text-white"><a href="SignUp.html" class="text-white">Sign Up</a></li></h4>
-              <li><h4 class="text-white"><a href="upload.html" class="text-white">Upload Details</a></li></h4>
-              <li><h4 class="text-white"><a href="Search.html" class="text-white">Search</a></li></h4>
+            <li><h4 class="text-white"><a href="upload.html" class="text-white">Upload Details</a></li></h4>
+            <li><h4 class="text-white"><a href="Search.html" class="text-white">Search</a></li></h4>
             </ul>
           </div>
         </div>
@@ -67,7 +65,7 @@
                 <h2 class="text-center">Recent Images</h2>
                 <p class="text-center">Here are the most recent images added</p>
             </div>
-            <div class="row photos">
+            <div class="row photos" id="RecentGallery">
                 <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png" data-lightbox="photos"><img class="img-fluid" src="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png"></a></div>
                 <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png" data-lightbox="photos"><img class="img-fluid" src="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png"></a></div>
                 <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png" data-lightbox="photos"><img class="img-fluid" src="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png"></a></div>
@@ -88,4 +86,5 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="./Scripts/Gallery.js"></script>
 </html>

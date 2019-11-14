@@ -2,10 +2,9 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const charRouter = require('./CRUD/characterQuery');
-// const artistRouter = require('./CRUD/artistQuery');
-// const illuRouter = require('./CRUD/illustrationQuery');
-// const artdetRouter = require('./CRUD/artdetailQuery');
-// const userRouter = require('./CRUD/userQuery');
+const artistRouter = require('./CRUD/artistQuery');
+const illuRouter = require('./CRUD/illustrationQuery');
+const artdetRouter = require('./CRUD/artdetailQuery');
 
 app.use(cors());
 app.use(express.json());
@@ -20,7 +19,10 @@ app.get('/', (req, res) => {
 })
 
 app.use('/character', charRouter);
+app.use('/artist', artistRouter);
+app.use('/illustration', illuRouter);
+app.use('/artdetails', artdetRouter);
 
-app.listen(8000);
+app.listen(8080);
 
 module.exports = app;

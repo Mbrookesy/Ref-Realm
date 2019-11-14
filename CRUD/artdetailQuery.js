@@ -2,67 +2,71 @@ const express = require('express');
 const router = express.Router();
 const models = require('../database_models');
 
-router.post('/add/:name/:hc/:hs/:ec/:bt/:series/:cs/:sex/:ag', (req, res) => {
+router.post('/add/:imgurl/:angle/:as/:cs/:pose/:scene/:cf/:medium/:aid', (req, res) => {
     models.artDetails.create({
-        name: req.params.name,
-        hair_colour: req.params.hc,
-        hair_style: req.params.hs,
-        eye_colour: req.params.ec,
-        body_type: req.params.bt,
-        series: req.params.series,
-        clothing_style: req.params.cs,
-        sex: req.params.sex,
-        age_group: req.params.ag
+        image_url: req.params.imgurl,
+        angle: req.params.angle,
+        art_style: req.params.as,
+        colour_style: req.params.cs,
+        pose: req.params.pose,
+        scene: req.params.scene,
+        camera_focus: req.params.cf,
+        medium: req.params.medium,
+        artistId: req.params.aid
     })
-    res.send("Created models.character " + req.params.name);
+    res.send("Created details");
 });
 
-router.post('/remove/:name', (req, res) => {
+router.post('/remove/:index/', (req, res) => {
     models.artDetails.destroy({
         where: {
-            name: req.params.name
+            id: req.params.index,
         }
     })
-    res.send("Deleted the models.character " + req.params.name);
+    res.send("Deleted details");
 });
 
-router.post('/update/:index/:name/:hc/:hs/:ec/:bt/:series/:cs/:sex/:ag'), (res, req) => {
-    models.artDetails.update({
-        name: req.params.name,
-        hair_colour: req.params.hc,
-        hair_style: req.params.hs,
-        eye_colour: req.params.ec,
-        body_type: req.params.bt,
-        series: req.params.series,
-        clothing_style: req.params.cs,
-        sex: req.params.sex,
-        age_group: req.params.ag },
-        {where: req.params.index}
-    )
-    res.send("Index " + req.params.index + " updated");  
-}
+router.put('/update/:imgurl/:angle/:as/:cs/:pose/:scene/:cf/:medium/:aid', (req, res) => {
+    try {
+        models.artDetails.update({ 
+            image_url: req.params.imgurl,
+        angle: req.params.angle,
+        art_style: req.params.as,
+        colour_style: req.params.cs,
+        pose: req.params.pose,
+        scene: req.params.scene,
+        camera_focus: req.params.cf,
+        medium: req.params.medium,
+        artistId: req.params.aid
+        }, { where: { id: req.params.index } });
+        res.send('probably worked')
+    }
+    catch{
+        res.status(500).send('Failed to \'update\''); T
+    }
+ });
 
 router.get('/all', async (_req, res) => {
-    const result = await artDetails.character.findAll();
+    const result = await models.artDetails.findAll();
     res.send(result);
 });
 
 
-router.get('/search/:name/:hc/:hs/:ec/:bt/:series/:cs/:sex/:ag', (req, res) => {
-    models.character.findAll({
-        where: {
-        name: req.params.name,
-        hair_colour: req.params.hc,
-        hair_style: req.params.hs,
-        eye_colour: req.params.ec,
-        body_type: req.params.bt,
-        series: req.params.series,
-        clothing_style: req.params.cs,
-        sex: req.params.sex,
-        age_group: req.params.ag
-        }
-    })
-    res.send("Searched models.characters");
+router.get('/search/:imgurl?/:angle?/:as?/:cs?/:pose?/:scene?/:cf?/:medium?/:aid?', async (req, res) => {
+
+    var whereStatement = {};
+    if (req.params.imgurl != null) whereStatement.image_url = req.params.imgurl;
+    if (req.params.angle != null) whereStatement.angle = req.params.angle;
+    if (req.params.as != null) whereStatement.art_style = req.params.as;
+    if (req.params.cs != null) whereStatement.colour_style = req.params.cs;
+    if (req.params.pose != null) whereStatement.pose = req.params.pose;
+    if (req.params.scene != null) whereStatement.scene = req.params.scene;
+    if (req.params.cf != null) whereStatement.camera_focus = req.params.cf;
+    if (req.params.medium != null) whereStatement.medium = req.params.medium;
+    if (req.params.aid != null) whereStatement.artistId = req.params.aid;
+
+    const result = await models.artDetails.findAll({where: whereStatement});
+    res.send(result);
 });
 
 module.exports = router;

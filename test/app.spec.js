@@ -5,7 +5,7 @@ const app = require('../server');
 chai.use(chaiHttp);
 
 describe('server', () => {
-    it('should do a thing', (done) => {
+    it('get', (done) => {
         chai.request(app)
         .get('/')
         .end((err, res) => {

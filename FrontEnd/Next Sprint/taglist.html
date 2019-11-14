@@ -39,9 +39,11 @@
           </div>
           <div class="col-sm-4 offset-md-1 py-4">
             <ul class="list-unstyled">
-                <li><h4 class="text-white"><a href="Gallery.html" class="text-white">Images</a></li></h4>
-                <li><h4 class="text-white"><a href="upload.html" class="text-white">Upload Details</a></li></h4>
-                <li><h4 class="text-white"><a href="Search.html" class="text-white">Search</a></li></h4>
+              <li><h4 class="text-white"><a href="Gallery.html" class="text-white">Images</a></li></h4>
+              <li><h4 class="text-white"><a href="login.html" class="text-white">Login</a></li></h4>
+              <li><h4 class="text-white"><a href="SignUp.html" class="text-white">Sign Up</a></li></h4>
+              <li><h4 class="text-white"><a href="upload.html" class="text-white">Upload Details</a></li></h4>
+              <li><h4 class="text-white"><a href="Search.html" class="text-white">Search</a></li></h4>
             </ul>
           </div>
         </div>
@@ -64,18 +66,32 @@
 <div class="container">
         <div class="row pt-1 pb-1">
             <div class="col-lg-12">
-                <h4 class="text-center text-white">Search References</h4>
-                <h6 class="lead text-center text-white">Search specific images or a group of images matching the info you specify.<br> You can put as much or as little as you want.<br>When typing tags please replace spaces with the character "_" for example "light blue" becomes "light_blue".</h6>
+                <h4 class="text-center text-white">Upload Details</h4>
+                <h6 class="lead text-center text-white">Upload images with details to the reference Database. <br>Please seperate each typable input with a "_" such as "light blue" becomming "light_blue". <br>Please fill in all fields either using the dropdown for existing entries or typing them for new ones<br>If you are unsure about what tags to add or what they are named please see the tag list page <a href="taglist.html">here</a></a></h6>
             </div>
         </div>
     </div>
 </section>
 <br>
 
+
+
 <section class="search-sec">
-        
     <div class="container">
-        <h6 class="text-white lead">Artwork Details</h6>
+        <h6 class="text-white lead">Url - Please include a direct image link</h6>
+        <form action="#" method="post" novalidate="novalidate">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-3 col-sm-12 p-0">
+                                <input type="text" class="form-control search-slt" placeholder="URL">
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+    <div class="container">
+        <h5 class="text-white lead">Artwork Details</h5>
         <form action="#" method="post" novalidate="novalidate">
             <div class="row">
                 <div class="col-lg-12">
@@ -98,30 +114,32 @@
                             <div class="col-lg-ad col-md-3 col-sm-12 p-0">
                                     <select class="form-control search-slt" id="artstyle">
                                         <option>Angle</option>
+                                        <option>3/4 Angle</option>
                                         <option>Birds Eye</option>
                                         <option>Dutch Angle</option>
-                                        <option>Forshortening</option>
-                                        <option>High Angle</option>
-                                        <option>Low Angle</option>
-                                        <option>Extreme Low Angle</option>
-                                        <option>Level Angle</option>
-                                    </select>
-                            </div>
-                            <div class="col-lg-ad col-md-3 col-sm-12 p-0">
-                                    <select class="form-control search-slt" id="artstyle">
-                                        <option>Camera Position</option>
-                                        <option>3/4 Front View</option>
-                                        <option>3/4 Back View</option>
-                                        <option>Portrait</option>
                                         <option>Extreme Close Up</option>
+                                        <option>Forshortening</option>
+                                        <option>From Behind</option>
                                         <option>From Front</option>
                                         <option>From Side</option>
                                         <option>High Angle</option>
                                         <option>Low Angle</option>
                                         <option>POV</option>
-                                        <option>Cowboy Shot</option>
-                                        <option>Long Shot</option>
-                                        <option>Full Body</option>
+                                    </select>
+                            </div>
+                            <div class="col-lg-ad col-md-3 col-sm-12 p-0">
+                                    <select class="form-control search-slt" id="artstyle">
+                                        <option>Camera Position</option>
+                                        <option>Extreme Close Up</option>
+                                        <option>Portrait</option>
+                                        <option>Dutch Angle</option>
+                                        <option>Extreme Close Up</option>
+                                        <option>From Behind</option>
+                                        <option>From Front</option>
+                                        <option>From Side</option>
+                                        <option>High Angle</option>
+                                        <option>Low Angle</option>
+                                        <option>POV</option>
                                     </select>
                             </div>
                         <div class="col-lg-ad col-md-3 col-sm-12 p-0">
@@ -154,7 +172,22 @@
                 </div>
             </div>
             <br>
+            
             <h6 class="text-white lead">Artist Details</h6>
+            <h6 class="text-white">Pseudonym is Mandatory</h6>
+            <form action="#" method="post" novalidate="novalidate">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                                <div class="col-lg-12 col-md-3 col-sm-12 p-0">
+                                        <select class="form-control search-slt" id="artstyle">
+                                            <option>Artist List</option>
+                                        </select>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
             <form action="#" method="post" novalidate="novalidate">
                 <div class="row">
                     <div class="col-lg-12">
@@ -176,6 +209,20 @@
                 </div>
                 <br>
                 <h6 class="text-white lead">Character Details</h6>
+                <h6 class="text-white">If the character is original put in 'franchise' "Original". If there is no character then please select "NO CHARACTER" in the character list</h6>
+                <form action="#" method="post" novalidate="novalidate">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                    <div class="col-lg-12 col-md-3 col-sm-12 p-0">
+                                            <select class="form-control search-slt" id="artstyle">
+                                                <option>Character List</option>
+                                            </select>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
         <form action="#" method="post" novalidate="novalidate">
             <div class="row">
                 <div class="col-lg-12">
@@ -241,30 +288,11 @@
         </form>
         <br>
         <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                <button type="button" class="btn btn-orangu wrn-btn">Search</button>
+                <button type="button" class="btn btn-orangu wrn-btn">Upload</button>
             </div>
     </div>
 </section>
 
-<div class="photo-gallery">
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-center">Gallery</h2>
-                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
-            </div>
-            <div class="row photos">
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png" data-lightbox="photos"><img class="img-fluid" src="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png" data-lightbox="photos"><img class="img-fluid" src="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png" data-lightbox="photos"><img class="img-fluid" src="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png" data-lightbox="photos"><img class="img-fluid" src="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://billfish.org/wp-content/uploads/2019/08/placeholder-image.jpg" data-lightbox="photos"><img class="img-fluid" src="https://billfish.org/wp-content/uploads/2019/08/placeholder-image.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png" data-lightbox="photos"><img class="img-fluid" src="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png"></a></div>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
