@@ -46,4 +46,25 @@ describe('artist', () => {
             });
            
         })
+
+        it('should get add an artist', (done) => {
+            chai.request('http://localhost:8080')
+            .post('/artist/add/test/test/test/test')
+            .end((err, res) => {
+                chai.expect(res.status).to.eq(200);
+                done();
+                });
+               
+            })
+    
+        it('should remove an artist', (done) => {
+            chai.request('http://localhost:8080')
+            .delete('/artist/removebyname/test')
+            .end((err, res) => {
+                chai.expect(res.status).to.eq(200);
+                done();
+                });
+               
+            })
+
     });

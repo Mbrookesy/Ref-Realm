@@ -3,7 +3,7 @@ const chaiHttp = require('chai-http');
 
 chai.use(chaiHttp);
 
-describe('artist', () => {
+describe('art details', () => {
     it('should get all artdetail records', (done) => {
         chai.request('http://localhost:8080/')
         .get('artdetails/all/')
@@ -59,4 +59,37 @@ describe('artist', () => {
             });
            
         })
+
+        it('should add artdetails', (done) => {
+            chai.request('http://localhost:8080')
+            .post('/artdetails/add')
+            .send({
+            artname: 'test',
+            image_url: 'test',
+            angle: 'test',
+            art_style: 'test',
+            colour_style: 'test',
+            pose: 'test',
+            scene: 'test',
+            camera_focus: 'test',
+            medium: 'test',
+            artistId: '1'
+            })
+            .end((err, res) => {
+                chai.expect(res.status).to.eq(200);
+                done();
+                });
+               
+            })
+    
+        it('should remove an artdetail', (done) => {
+            chai.request('http://localhost:8080')
+            .delete('/artdetails/removebyname/test')
+            .end((err, res) => {
+                chai.expect(res.status).to.eq(200);
+                done();
+                });
+               
+            })
+
     });

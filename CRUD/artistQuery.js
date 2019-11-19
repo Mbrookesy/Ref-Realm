@@ -21,6 +21,15 @@ router.delete('/remove/:index/', (req, res) => {
     res.send("Deleted the artist " + req.params.name);
 });
 
+router.delete('/removebyname/:name/', (req, res) => {
+    models.artist.destroy({
+        where: {
+            pseudonym: req.params.name,
+        }
+    })
+    res.send("Deleted the artist " + req.params.name);
+});
+
 router.put('/update/:index/:pse/:fn/:ln/:country/', (req, res) => {
     try {
         models.artist.update({ 

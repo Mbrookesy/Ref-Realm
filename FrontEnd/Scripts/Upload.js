@@ -98,6 +98,7 @@ function createIllu(){
         method: 'POST',
         headers: { 'Content-type': 'application/json' }
         })).then(json => json.json())
+        .then(json => alert("Illustration Added"))
         .catch(err => console.error(err));
-        alert("Illustration Added");
+
 }

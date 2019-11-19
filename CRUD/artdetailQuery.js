@@ -15,12 +15,22 @@ router.post('/add', (req, res) => {
         medium: req.body.medium,
         artistId: req.body.artistId
     })
+    res.send("Added");
 });
 
 router.delete('/remove/:index/', (req, res) => {
     models.artDetails.destroy({
         where: {
             id: req.params.index,
+        }
+    })
+    res.send("Deleted details");
+});
+
+router.delete('/removebyname/:name/', (req, res) => {
+    models.artDetails.destroy({
+        where: {
+            artname: req.params.name,
         }
     })
     res.send("Deleted details");

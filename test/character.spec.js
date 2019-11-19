@@ -46,6 +46,26 @@ describe('character', () => {
             });
            
         })
+
+    it('should get add a character', (done) => {
+        chai.request('http://localhost:8080')
+        .post('/character/add/test/yellow/bun/blue/average/digimon/casual/male/teen/')
+        .end((err, res) => {
+            chai.expect(res.status).to.eq(200);
+            done();
+            });
+           
+        })
+
+    it('should remove a character', (done) => {
+        chai.request('http://localhost:8080')
+        .delete('/character/removebyname/test')
+        .end((err, res) => {
+            chai.expect(res.status).to.eq(200);
+            done();
+            });
+           
+        })
     });
 
     

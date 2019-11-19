@@ -26,6 +26,15 @@ router.delete('/remove/:index/', (req, res) => {
     res.send("Deleted the models.character " + req.params.name);
 });
 
+router.delete('/removebyname/:name/', (req, res) => {
+    models.character.destroy({
+        where: {
+            name: req.params.name,
+        }
+    })
+    res.send("Deleted the models.character " + req.params.name);
+});
+
 router.put('/update/:index/:name/:hc/:hs/:ec/:bt/:series/:cs/:sex/:ag', (req, res) => {
     try {
         models.character.update({ 
